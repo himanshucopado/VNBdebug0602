@@ -24,14 +24,17 @@ Save Account Number To Daily File
     # Suite-wide scope
 
     ${account_number}=    Set Suite Variable          ${account_number}           12345678
+    Log To Console   ${account_number}     
 
 
 
     # Get today's date using Python built-in — no DateTime library needed
     ${today}=             Evaluate                    __import__('datetime').datetime.now().strftime('%Y-%m-%d')
+    Log To Console        ${today}
 
     # Build the full file path pointing to the Data folder you created at root
     ${file_path}=         Set Variable                ${CURDIR}/../Data/${today}.txt
+    Log To Console        ${file_path}
 
     # Check if today's file already exists
     ${file_exists}=       Run Keyword And Return Status                           File Should Exist    ${file_path}
