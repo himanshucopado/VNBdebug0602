@@ -6,7 +6,7 @@ Documentation             New test suite
 Library                   QForce
 Library                   FakerLibrary
 Library                   OperatingSystem
-Library                   ${CURDIR}/../Library/GitOperations.py
+Library                   ../Library/GitOperations.py
 Library                   Process
 Suite Setup               Open Browser                about:blank                 chrome
 Suite Teardown            Close All Browsers
