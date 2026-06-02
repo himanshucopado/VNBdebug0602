@@ -11,16 +11,10 @@ Library                   Process
 Suite Setup               Open Browser                about:blank                 chrome
 Suite Teardown            Close All Browsers
 
-
 *** Variables ***
-
-
 ${git_branch}             main
 
-
 *** Keywords ***
-
-
 Save Account Number To Daily File
     [Arguments]           ${account_number}
     [Documentation]       Creates or appends the Account Number to a daily dated text file
@@ -56,6 +50,7 @@ Save Account Number To Daily File
     Log                   Account number [${account_number}] saved to: ${file_path}
     logtoconsole          Account number [${account_number}] saved to: ${file_path}
     logtoconsole          ${git_branch}
+
 Save Text Document
     [Arguments]           ${file_path}
     [Documentation]       Commits and pushes the given file to the current Git branch.
