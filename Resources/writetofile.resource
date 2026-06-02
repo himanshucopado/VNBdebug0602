@@ -23,7 +23,9 @@ Save Account Number To Daily File
 
     # Suite-wide scope
 
-    ${account_number}=    Set Suite Variable          ${account_number}           12345678
+    # ${account_number}=                              Set Suite Variable          ${account_number}    12345678
+    ${account_number}     Set Variable                12345678
+    Set Suite Variable    ${account_number}
     Log To Console        ${account_number}
 
 
