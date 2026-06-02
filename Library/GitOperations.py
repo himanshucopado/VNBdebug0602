@@ -17,8 +17,11 @@ class GitOperations(object):
             if self._project_path == "/home/services/suite/tests":
                 # We are in live testing and project name is not in project path
                 self._project_path = os.path.join("/home/services/suite/")
+            elif self._project_path == "/home/services/suite/Resources":  # <-- your condition
+                self._project_path = os.path.join("/home/services/suite/")
             else:
                 self._project_path = os.path.join(os.getcwd(), self._project_name)
+            
 
         logger.console(self._project_path)
         self._data_path = os.path.join(self._project_path, "data/")
