@@ -15,7 +15,7 @@ Suite Teardown            Close All Browsers
 *** Variables ***
 
 
-${git_branch}             Sidtest
+${git_branch}             main
 
 
 *** Keywords ***
