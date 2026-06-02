@@ -15,7 +15,7 @@ Suite Teardown            Close All Browsers
 *** Variables ***
 ${git_branch}             main
 
-*** Test Cases ***
+*** Keywords ***
 Save Account Number To Daily File
     # [Arguments]           ${account_number}
     [Documentation]       Creates or appends the Account Number to a daily dated text file
