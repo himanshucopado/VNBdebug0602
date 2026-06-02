@@ -36,8 +36,8 @@ Save Account Number To Daily File
     Log To Console        ${today}
 
     # Build the full file path pointing to the Data folder you created at root
-    # ${file_path}=         Set Variable                ${CURDIR}/../Data/${today}.txt
-    ${file_path}=         Set Variable                ${CURDIR}/../Data/${account_number}.txt
+    ${file_path}=         Set Variable                ${CURDIR}/../Data/${today}.txt
+    
     Log To Console        ${file_path}
 
     # Check if today's file already exists
