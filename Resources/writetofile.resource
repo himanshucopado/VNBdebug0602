@@ -56,9 +56,9 @@ Save Account Number To Daily File
     logtoconsole          Account number [${account_number}] saved to: ${file_path}
     logtoconsole          ${git_branch}
 
-Save Text Document
-    [Arguments]           ${file_path}
-    [Documentation]       Commits and pushes the given file to the current Git branch.
+# Save Text Document
+#     [Arguments]           ${file_path}
+#     [Documentation]       Commits and pushes the given file to the current Git branch.
     # Replace the Log below with a Run Process Git commit if automation of Git push is needed
     # Log                 Saving file to branch: ${git_branch} — path: ${file_path}
     Commit And Push       ${file_path}                ${git_branch}
