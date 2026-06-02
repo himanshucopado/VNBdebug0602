@@ -24,7 +24,7 @@ Save Account Number To Daily File
     # Suite-wide scope
 
     ${account_number}=    Set Suite Variable          ${account_number}           12345678
-    Log To Console   ${account_number}     
+    Log To Console        ${account_number}
 
 
 
@@ -38,7 +38,7 @@ Save Account Number To Daily File
 
     # Check if today's file already exists
     ${file_exists}=       Run Keyword And Return Status                           File Should Exist    ${file_path}
-    Log To Console         ${file_exists}
+    Log To Console        ${file_exists}
     Log To Console        ${account_number}
     # If file exists → append account number on a new line
     # If file does not exist → create it with account number as first line
@@ -48,8 +48,8 @@ Save Account Number To Daily File
     ELSE
         Create File       ${file_path}                ${account_number}${\n}      encoding=UTF-8
     END
-    ${filecontent}        GetFile           ${file_path} 
-    Log To Console          ${filecontent}                           
+    ${filecontent}        GetFile                     ${file_path}
+    Log To Console        ${filecontent}
     Log                   Account number [${account_number}] saved to: ${file_path}
     logtoconsole          Account number [${account_number}] saved to: ${file_path}
     logtoconsole          ${git_branch}
@@ -59,15 +59,15 @@ Save Text Document
     [Documentation]       Commits and pushes the given file to the current Git branch.
     # Replace the Log below with a Run Process Git commit if automation of Git push is needed
     # Log                 Saving file to branch: ${git_branch} — path: ${file_path}
-    Commit And Push       ${file_path}                  ${git_branch}  
+    Commit And Push       ${file_path}                ${git_branch}
 
     # Log                 Using repo path: ${REPO_DIR}
     # Commit And Push     ${file_path}                Sidtest
 
     Run Process           git                         add                         ${file_path}         cwd=${git_branch}
-    
+
     # Commit
     Run Process           git                         commit                      -m                   cwd=${git_branch}
-    
+
     # Push
     Run Process           git                         push                        cwd=${git_branch}
