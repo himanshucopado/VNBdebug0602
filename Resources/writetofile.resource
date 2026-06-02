@@ -17,7 +17,7 @@ ${git_branch}             main
 
 *** Keywords ***
 Save Account Number To Daily File
-    # [Arguments]           ${account_number}
+    [Arguments]           ${account_number}
     [Documentation]       Creates or appends the Account Number to a daily dated text file
     ...                   in the Data folder at root: ${EXECDIR}/Data/YYYY-MM-DD.txt
     ...                   First run of the day creates the file, every subsequent run appends.
